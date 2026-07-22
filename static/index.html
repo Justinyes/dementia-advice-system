@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>痴呆改善建议系统</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="conversation-pane" aria-label="对话">
+        <header class="topbar">
+          <div>
+            <h1>痴呆改善建议系统</h1>
+            <p>多轮画像收集 · Excel 证据检索 · 可解释排序</p>
+          </div>
+          <button id="demoButton" class="ghost-button" type="button">填入示例</button>
+        </header>
+
+        <div id="messages" class="messages"></div>
+
+        <form id="chatForm" class="composer">
+          <textarea
+            id="messageInput"
+            rows="3"
+            placeholder="例如：我爸 72 岁，最近记性差一点，平时不太爱运动，喜欢跟邻居打麻将。"
+          ></textarea>
+          <button type="submit">发送</button>
+        </form>
+      </section>
+
+      <aside class="insight-pane" aria-label="画像与推荐">
+        <section>
+          <div class="section-heading">
+            <h2>个体画像</h2>
+            <span id="phaseBadge">待输入</span>
+          </div>
+          <div id="profileList" class="profile-list empty">暂无画像信息</div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>命中标签</h2>
+          </div>
+          <div id="tagList" class="tag-list empty">暂无标签</div>
+        </section>
+
+        <section>
+          <div class="section-heading">
+            <h2>推荐排序</h2>
+          </div>
+          <div id="recommendationList" class="recommendation-list empty">信息足够后生成排序</div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
